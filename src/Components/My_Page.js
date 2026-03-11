@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './CSS/style.css'
+import './CSS/mediaq.css'
 
 export default function My_Page({ alert }) {
     const [isDark, setIsDark] = useState(false)
@@ -73,11 +74,12 @@ export default function My_Page({ alert }) {
                 <div className='inputs'>
                     <input type="text" placeholder="Enter Name Here" onChange={set_alert} />
                     <button className='submit' onClick={show_alert}>Submit</button>
-                    <label htmlFor="modes">Dark Mode</label>
+                    <label htmlFor="modes" >Dark Mode</label>
                     <input
                         type="checkbox"
                         id="modes"
                         onChange={Bg_Color}
+                        className='darkmod_btn'
                     />
                 </div>
             </nav>

@@ -1,5 +1,6 @@
 import React from 'react'
 import './CSS/style.css'
+import './CSS/mediaq.css'
 
 export default function Alert({ MainMessage, Message, num_of_words }) {
     return (

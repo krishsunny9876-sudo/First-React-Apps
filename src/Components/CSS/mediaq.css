@@ -1,0 +1,52 @@
+@media screen and (max-width: 900px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav .linker {
+        gap: 20px;
+        width: 50%;
+        margin-bottom: 20px;
+    }
+
+    .inputs {
+        display: flex;
+        justify-content: space-around;
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav {
+        width: 120%;
+    }
+
+    .warning {
+        width: 120%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        width: 150%;
+    }
+
+    .warning {
+        width: 150%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav {
+        width: 180%;
+    }
+
+    .warning {
+        width: 180%;
+    }
+
+    .inputs {
+        margin-left: 150px;
+    }
+}
