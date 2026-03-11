@@ -12,13 +12,15 @@ import {
 function App() {
   const [alert, setalert] = useState({
     main_messages: null,
-    message: null
+    message: null,
+    num_of_words: null
   });
 
-  const setting_alert = (main_messages, message) => {
+  const setting_alert = (main_messages, message, num_of_words) => {
     setalert({
       main_messages,
-      message
+      message,
+      num_of_words
     });
   };
 
@@ -40,6 +42,7 @@ function App() {
       <Alert
         MainMessage={alert.main_messages}
         Message={alert.message}
+        num_of_words={alert.num_of_words}
       />
     </Router>
   );

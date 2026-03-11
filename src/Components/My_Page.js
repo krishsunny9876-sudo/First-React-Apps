@@ -5,6 +5,7 @@ export default function My_Page({ alert }) {
     const [isDark, setIsDark] = useState(false)
     const [clickAble, setclickAble] = useState(true)
     const [inpt, setinpt] = useState(null);
+    const [NumOfWord, setword] = useState(0);
 
     const input1 = document.getElementsByTagName('input')[0]
 
@@ -46,11 +47,12 @@ export default function My_Page({ alert }) {
         if (inpt) {
             let num_of_words = inpt.trim().split(' ').length;
             console.log(num_of_words);
+            setword(num_of_words);
         }
     }
     const show_alert = () => {
         if (!inpt || !clickAble) return;
-        alert("Success", inpt)
+        alert("Success", inpt, NumOfWord)
         input1.value = '';
         setclickAble(false)
         setTimeout(function () {
