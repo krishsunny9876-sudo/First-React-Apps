@@ -39,6 +39,8 @@ export default function My_Page({ alert }) {
     }
     const set_alert = (e) => {
         setinpt(e.target.value);
+        let num_of_words = inpt.trim().split(' ');
+        console.log(num_of_words);
     }
     const show_alert = () => {
         if (!inpt || !clickAble) return;
@@ -51,7 +53,7 @@ export default function My_Page({ alert }) {
             setinpt(null);
         }, 2000)
     }
-    
+
     return (
         <div>
             <nav>
