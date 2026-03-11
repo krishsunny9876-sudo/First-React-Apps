@@ -1,36 +1,47 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import TextForms from './components/TextForm';
-import About from './components/About'
+import MyPage from './Components/My_Page';
+import Alert from './Components/Alert';
 import { useState } from 'react';
+import './Components/CSS/container.css'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
-  const [darkMode, set_darkMode] = useState({
-    backgroundColor: 'white',
-    color: 'black',
+  const [alert, setalert] = useState({
+    main_messages: null,
+    message: null
   });
-  const toggleColor = () => {
-    if (darkMode.color === 'black') {
-      set_darkMode({
-        backgroundColor: 'black',
-        color: 'white'
-      })
-    }
-    else {
-      set_darkMode({
-        backgroundColor: 'white',
-        color: 'black'
-      })
-    }
-  }
+
+  const setting_alert = (main_messages, message) => {
+    setalert({
+      main_messages,
+      message
+    });
+  };
+
   return (
-    <>
-      <Navbar title="Kirten" home="Home" mode={darkMode} toggle_color={toggleColor} />
-      <div className="container my-3">
-        <TextForms />
-      </div>
-      <About />
-    </>
+    <Router>
+      <Routes>
+        <Route
+          path="/header"
+          element={<MyPage alert={setting_alert} />}
+        />
+
+        <Route
+          path="/"
+          element={<></>}
+        />
+      </Routes>
+      <Link to={'/header'}><button className='submit m-all'>Header</button></Link>
+      <Link to={'/'}><button className='submit m-all'>Home</button></Link>
+      <Alert
+        MainMessage={alert.main_messages}
+        Message={alert.message}
+      />
+    </Router>
   );
 }
 
