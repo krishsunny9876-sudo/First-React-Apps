@@ -50,3 +50,17 @@
         margin-left: 150px;
     }
 }
+
+@media screen and (max-width: 360px) {
+    nav {
+        width: 200%;
+    }
+
+    .warning {
+        width: 200%;
+    }
+
+    .inputs {
+        margin-left: 150px;
+    }
+}
