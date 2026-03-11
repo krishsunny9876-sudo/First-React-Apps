@@ -46,7 +46,6 @@ export default function My_Page({ alert }) {
         setinpt(e.target.value);
         if (inpt) {
             let num_of_words = inpt.trim().split(' ').length;
-            console.log(num_of_words);
             setword(num_of_words);
         }
     }
