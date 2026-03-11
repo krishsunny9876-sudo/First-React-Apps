@@ -38,9 +38,15 @@ export default function My_Page({ alert }) {
         setIsDark(!isDark)
     }
     const set_alert = (e) => {
+        if (e.target.value.trim() === '') {
+            setinpt(null);
+            return;
+        }
         setinpt(e.target.value);
-        let num_of_words = inpt.trim().split(' ');
-        console.log(num_of_words);
+        if (inpt) {
+            let num_of_words = inpt.trim().split(' ').length;
+            console.log(num_of_words);
+        }
     }
     const show_alert = () => {
         if (!inpt || !clickAble) return;
